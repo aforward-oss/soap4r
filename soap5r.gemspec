@@ -4,7 +4,7 @@ require File.join(File.dirname(__FILE__), 'lib', 'soap', 'version')
 SPEC = Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.name = 'soap5r'
-  s.version = SOAP::VERSION::STRING # + (ENV['PKG_BUILD'] ? ".#{ENV['PKG_BUILD']}" : ".#{Time.now.strftime('%Y%m%d%H%M%S')}")
+  s.version = SOAP::VERSION
   s.summary = "An updated implementation of SOAP 1.1 for Ruby 1.8 and 1.9."
   s.description = "An updated implementation of SOAP 1.1 for Ruby 1.8 and 1.9."
 

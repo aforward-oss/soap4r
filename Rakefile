@@ -1,20 +1,15 @@
-require 'rake/gempackagetask'
+require "bundler/gem_tasks"
+require 'rspec/core/rake_task'
+
+import 'lib/soap/ci.rake'
+RSpec::Core::RakeTask.new
 require 'rake/testtask'
 
 task :default => 'test:deep'
 
 ## ---------------------------------------------------------------------------------------------------- ##
-## Gem Packaging
-## ---------------------------------------------------------------------------------------------------- ##
-load 'soap4r.gemspec'
-Rake::GemPackageTask.new(SPEC) do |pkg|
-  pkg.need_zip = true
-  pkg.need_tar = true
-end
-
-## ---------------------------------------------------------------------------------------------------- ##
 ## Unit Testing
-## run against the soap4r library for the given Comma-Separated List of Test Scopes. 
+## run against the soap5r library for the given Comma-Separated List of Test Scopes. 
 ##   rake test:deep [SCOPE=soap,wsdl,...]
 ## Also accepts WARNINGS and VERBOSE as environment variables to control the level of debugging output.
 ## ---------------------------------------------------------------------------------------------------- ##

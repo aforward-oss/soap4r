@@ -55,9 +55,10 @@ class MethodDefCreator
       return binding.operations.collect { |op_bind|
         next unless op_bind.soapoperation # not a SOAP operation binding
         create_methoddef(op_bind)
-      }
+      }.reject{|item| item.nil? }
+    else
+      []
     end
-    nil
   end
 
 private
